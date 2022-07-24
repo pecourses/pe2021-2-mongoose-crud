@@ -75,13 +75,13 @@ DELETE http://127.0.0.1:5000/api/users/62dd59a01ee24a168935e971 HTTP/1.1
 
 DELETE http://127.0.0.1:5000/api/users/6180fb188a4358d038a00000 HTTP/1.1
 
-### post user post 200
+### post user post 201
 
-POST http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45/posts HTTP/1.1
+POST http://127.0.0.1:5000/api/users/62dd617602a7945564e60d11/posts HTTP/1.1
 Content-Type: application/json
 
 {
-    "body": "Hello"   
+    "body": "Hello)"   
 }
 
 ### post user post 404
@@ -95,7 +95,7 @@ Content-Type: application/json
 
 ### post user post 422 (500)
 
-POST http://127.0.0.1:5000/api/users/6180fb188a4358d038a00000/posts HTTP/1.1
+POST http://127.0.0.1:5000/api/users/62dd617602a7945564e60d11/posts HTTP/1.1
 Content-Type: application/json
 
 {
@@ -104,8 +104,8 @@ Content-Type: application/json
 
 ### get user posts 200
 
-GET http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45/posts HTTP/1.1
+GET http://127.0.0.1:5000/api/users/62dd617602a7945564e60d11/posts HTTP/1.1
 
 ### get user posts 404
 
-GET http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45/posts HTTP/1.1
+GET http://127.0.0.1:5000/api/users/62dd618102a7945564e60d14/posts HTTP/1.1
