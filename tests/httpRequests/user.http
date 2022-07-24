@@ -1,0 +1,110 @@
+### post 201
+
+POST http://127.0.0.1:5000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Mongoose Name 1",
+    "lastName": "Mongoose Lastname 1",
+    "email": "email1@gmail.com",
+    "birthday": "1990-10-10",
+    "workExperience": 10
+}
+
+### post 422 (500)
+
+POST http://127.0.0.1:5000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Mongoose Name 1",
+    "lastName": "Mongoose Lastname 1",
+    "email": "email1gmail.com",
+    "birthday": "1990-10-10",
+    "workExperience": 10
+}
+
+### get all 200
+
+GET http://127.0.0.1:5000/api/users HTTP/1.1
+
+### get single 200
+
+GET http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45 HTTP/1.1
+
+### get single 404
+
+GET http://127.0.0.1:5000/api/users/6180fb188a4358d038a00000 HTTP/1.1
+
+### patch 200
+
+PATCH http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45 HTTP/1.1
+Content-Type: application/json
+
+{
+    "workExperience": 8,
+    "isMarried": false   
+}
+
+### patch 422(500)
+
+PATCH http://127.0.0.1:5000/api/users/6180fb188a4358d038a00000 HTTP/1.1
+Content-Type: application/json
+
+{
+    "workExperience": "exists",
+    "isMarried": false   
+}
+
+### patch 404
+
+PATCH http://127.0.0.1:5000/api/users/6180fb188a4358d038a00000 HTTP/1.1
+Content-Type: application/json
+
+{
+    "workExperience": 8,
+    "isMarried": false   
+}
+
+### delete 204
+
+DELETE http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45 HTTP/1.1
+
+### delete 404
+
+DELETE http://127.0.0.1:5000/api/users/6180fb188a4358d038a00000 HTTP/1.1
+
+### post user post 200
+
+POST http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45/posts HTTP/1.1
+Content-Type: application/json
+
+{
+    "body": "Hello"   
+}
+
+### post user post 404
+
+POST http://127.0.0.1:5000/api/users/6180fb188a4358d038a00000/posts HTTP/1.1
+Content-Type: application/json
+
+{
+    "body": "Hello"   
+}
+
+### post user post 422 (500)
+
+POST http://127.0.0.1:5000/api/users/6180fb188a4358d038a00000/posts HTTP/1.1
+Content-Type: application/json
+
+{
+    "body": ""   
+}
+
+### get user posts 200
+
+GET http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45/posts HTTP/1.1
+
+### get user posts 404
+
+GET http://127.0.0.1:5000/api/users/6180fb188a4358d038a36a45/posts HTTP/1.1
