@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema(
       type: 'boolean',
       default: false,
     },
-    workExp: {
+    workExperience: {
       type: 'number',
       min: 0,
     },
